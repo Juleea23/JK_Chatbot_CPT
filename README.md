@@ -6,6 +6,7 @@ The project is about the development of an assistance system to low-threshold pr
 This Repository contains:
 - **Flask-App** (`flask_app/app.py`)
 - **Rasa** (`rasa_app/`)
+- election programs have to be stored in form of PDFs in the folder rasa_app/pdfs  
 ⚠️ For reasons of size and clarity not all documents have been uploaded in this repository. 
 
 ## ▶️ local execution
