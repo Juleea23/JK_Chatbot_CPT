@@ -20,15 +20,14 @@ login(HUGGINGFACEHUB_API_TOKEN)
 app = Flask(__name__)
 
 # Pfade
-VECTOR_DB_PATH = "vector_db"
-DATA_FOLDER = r"C:\Users\jukoe\Documents\Masterstudium\Kurse\Creative Prompting Techniques\rasa\pdfs"
+VECTOR_DB_PATH = r"C:\langchain-env\vector_db"
+DATA_FOLDER = r"C:\Creative Prompting Techniques\rasa\pdfs"
 
 # Modell für Embeddings und semantische Suche
 #MODEL_NAME = "sentence-transformers/msmarco-MiniLM-L6-cos-v5" #Test, wurde dann doch nicht verwendet
 MODEL_NAME = "BAAI/bge-m3"
 
 embedding = HuggingFaceEmbeddings(model_name=MODEL_NAME)
-db = FAISS.load_local(VECTOR_DB_PATH, embeddings=embedding, allow_dangerous_deserialization=True)
 similarity_model = SentenceTransformer(MODEL_NAME)
 
 # 🔢 Ähnlichkeitsscore für semantische Suche (je niedriger, desto mehr Treffer)
@@ -113,6 +112,8 @@ def process_pdfs():
 # Prüfe, ob der Index existiert – falls nicht, PDFs verarbeiten
 if not os.path.exists(VECTOR_DB_PATH):
     process_pdfs()
+
+db = FAISS.load_local(VECTOR_DB_PATH, embeddings=embedding, allow_dangerous_deserialization=True)
 
 @app.route("/query", methods=["POST"])
 def query():
