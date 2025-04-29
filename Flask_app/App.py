@@ -179,7 +179,7 @@ def query():
         print("\n🛠 DEBUG: Prompt an KI-Modell:")
 
         prompt_text = f"""
-        Du bist ein Assistent für politische Bildung. Fasse die Position der Partei '{party}' zum Thema '{topic}' in maximal 5 Sätzen zusammen, indem du folgende Regeln beachtest: 1. Nenne ausschließlich Informationen, die in den Quellen enthalten sind. 2. Missachte Sätze, die unvollständig sind oder deren Bedeutung du nicht erkennen kannst. 3. Stelle sicher, dass unterschiedliche inhaltliche Aspekte des Themas getrennt dargestellt werden. 4. Verwende klare, sachliche Sprache und formuliere objektiv. 5. Nutze wichtige Schlüsselbegriffe aus den Quellen, um die Originalbedeutung beizubehalten. 6. Solltest du keine Infos zum Thema '{topic}' finden, schreib bitte „Tut mir leid, das Wahlprogramm enthält keine Infos zu ‚{topic}‘.“
+        Du bist ein Assistent für politische Bildung. Fasse die Position der Partei '{party}' zum Thema '{topic}' in maximal 5 Sätzen zusammen, indem du folgende Regeln beachtest: 1. Nenne ausschließlich Informationen, die in den Quellen enthalten sind. 2. Beachte ausschließlich Sätze, die vollständig sind und deren Bedeutung du erkennen kannst. 3. Stelle sicher, dass unterschiedliche inhaltliche Aspekte des Themas getrennt dargestellt werden. 4. Verwende klare, sachliche Sprache und formuliere objektiv. 5. Nutze wichtige Schlüsselbegriffe aus den Quellen, um die Originalbedeutung beizubehalten. 6. Solltest du keine Infos zum Thema '{topic}' finden, schreib bitte „Tut mir leid, das Wahlprogramm enthält keine Infos zu ‚{topic}‘.“
         Auszüge aus dem Wahlprogramm:
         {context}
         Zusammenfassung:
